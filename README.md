@@ -1,3 +1,7 @@
-# Growtopia
+# Genta Custom Api
 
-<img src=”https://i.pinimg.com/originals/16/03/fb/1603fb7077abb9093f4af305b4e5ce79.gif" alt=”banner”>
+<h3 align="center">A passionate frontend developer from India</h3>
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
