@@ -1,8 +1,10 @@
-<h2 align="center">What Is CApi?</h2>
+<h3 align="center">What Is CApi?</h3>
 
-<h6>CApi Is Custom Api For Genta Hax Writen In Lua</h6>
+```
+CApi Is Custom Api For Genta Hax Writen In Lua
+```
 
-<h2 align="center">List Of Custom Api</h2>
+<h3 align="center">List Of Custom Api</h3>
 
 <h4>1) cinv(id) [return int]</h4>
 <h5>[Getting Amount Of Item In Inventory]</h5>
