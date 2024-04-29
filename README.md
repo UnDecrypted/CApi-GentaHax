@@ -2,6 +2,14 @@
 
 > CApi Is Custom Api For Genta Hax Writen In Lua
 
+<h4 align="center">Main Code</h4>
+
+```
+load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/main/main.lua", "GET").content)()
+```
+
+> Just Copy And Paste The Code To Ur Script
+
 <h4 align="center">List Of Custom Api</h4>
 
 ```
@@ -51,4 +59,4 @@ int = capi.cinv(242)
 doLog(int)
 ```
 
-<h6>Just Try It So U Know How To Use It</h6>
+> Just Try It So U Know How To Use It
