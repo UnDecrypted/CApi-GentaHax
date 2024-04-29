@@ -13,3 +13,12 @@
   }
 }
 ```
+
+<h3 align="center">How To Use CApi</h3>
+
+```
+int = capi.cinv(242)
+doLog(int)
+```
+
+<h6>Just Try It So U Know How To Use It</h6>
