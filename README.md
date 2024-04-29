@@ -1,2 +1,2 @@
 # Growtopia
-Growtopia Script
+Idk About This Game
