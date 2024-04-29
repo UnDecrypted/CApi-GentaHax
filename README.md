@@ -1,8 +1,8 @@
-<h3 align="center">What Is CApi?</h3>
+<h4 align="center">What Is CApi?</h4>
 
 > CApi Is Custom Api For Genta Hax Writen In Lua
 
-<h3 align="center">List Of Custom Api</h3>
+<h4 align="center">List Of Custom Api</h4>
 
 ```
 {
@@ -44,7 +44,7 @@
 }
 ```
 
-<h3 align="center">How To Use CApi</h3>
+<h4 align="center">How To Use CApi</h4>
 
 ```
 int = capi.cinv(242)
