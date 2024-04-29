@@ -1,5 +1,5 @@
 # Genta Custom Api
 
-<h3 align="center">What Is CApi?</h3>
+<h2 align="center">What Is CApi?</h2>
 
-<h1>CApi Is Custom Api For Genta Hax Writen In Lua</h1>
+<h4>CApi Is Custom Api For Genta Hax Writen In Lua</h4>
