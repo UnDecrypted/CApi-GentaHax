@@ -1,0 +1,2 @@
+# Growtopia
+Growtopia Script
