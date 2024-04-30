@@ -19,7 +19,6 @@ capi.cinv = function(id)
 end
 
 capi.warp = function(world,path)
-  doLog("warp")
   while getWorld().name ~= world:upper() do
     sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
     sleep(1000)
