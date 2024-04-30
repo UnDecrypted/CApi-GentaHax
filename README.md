@@ -1,3 +1,7 @@
+<h4 align="center">Credit</h4>
+
+> https://discord.com/invite/genta7740
+
 <h4 align="center">What Is CApi?</h4>
 
 > CApi Is Custom Api For Genta Hax Writen In Lua
