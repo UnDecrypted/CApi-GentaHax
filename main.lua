@@ -44,6 +44,15 @@ capi.warp = function(world,path)
   doLog("done")
 end
 
+capi.invtp = function(x,y)
+  pkt = {}
+  pkt.type = 0
+  pkt.value = 32
+  pkt.x = x*32
+  pkt.y = y*32
+  sendPacketRaw(false, pkt)
+end
+
 capi.punch = function(x,y)
   pkt = {}
   pkt.x = getLocal().pos.x
