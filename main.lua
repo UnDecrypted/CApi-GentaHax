@@ -19,16 +19,26 @@ capi.cinv = function(id)
 end
 
 capi.warp = function(world,path)
+  local looped = 0
   while getWorld().name ~= world:upper() do
-    doLog("not same")
+    doLog(getWorld().name.."/"..world:upper())
+    looped = looped + 1
     sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
     sleep(1000)
+    if looped == 3 then
+      logToConsole("Error Connection?")
+      break
+    end
   end
+  looped = 0
   if checkTile(math.floor(getLocal().pos.x/32),math.floor(getLocal().pos.y/32)).fg then
     while checkTile(math.floor(getLocal().pos.x/32),math.floor(getLocal().pos.y/32)).fg == 6 do
-      doLog("in white door")
       sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
       sleep(1000)
+      if looped == 3 then
+        logToConsole("Not Found Path / Error Connection?")
+        break
+      end
     end
   end
   doLog("done")
