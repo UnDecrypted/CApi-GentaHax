@@ -1,6 +1,7 @@
 <h4 align="center">Credit</h4>
 
 <h6>Genta Hax</h6>
+
 [discord](https://discord.com/invite/genta7740)
 
 <h4 align="center">What Is CApi?</h4>
