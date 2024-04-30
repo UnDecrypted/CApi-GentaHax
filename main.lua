@@ -106,14 +106,21 @@ end
 
 logToConsole("`4[@AKM?] : CApi Is Loaded")
 
+function SDialog(struct)
+  var = {}
+  var[0] = "OnDialogRequest"
+  var[1] = struct
+  sendVariant(var)
+end
+
 function hook(type, pkt)
   if pkt:find("action|input\n|text|") then
     if pkt:find("/api") then
-      local dump = "`9list of api\n"
-      for i, v in pairs(capi) do
-        dump = dump..i.."()\n"
+      local dump = "add_label_with_icon|big|`9[CApi] Api List``|left|1796"
+      for i,v in pairs(capi) do
+        dump = dump.."add_smalltext|"..i.."()|\n"
       end
-      logToConsole(dump)
+      SDialog(dump)
     end
   end
 end
