@@ -150,4 +150,4 @@ end
 
 AddHook("OnTextPacket", "jdjjx", hook)
 
-logToConsole("`4[@AKM?] : CApi Is Loaded")
+logToConsole("`4[@AKM?] : CApi Is Loaded\nList Api? Just Type /api")
