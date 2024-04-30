@@ -24,6 +24,16 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 ```
 {
   {
+    api : px()
+    return : int
+    usage : to get player current x position
+  }
+  {
+    api : py()
+    return : int
+    usage : to get player current y position
+  }
+  {
     api : cinv(int id)
     return : int
     usage : to get amount of item in inventory
