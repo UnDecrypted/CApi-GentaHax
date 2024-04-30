@@ -1,5 +1,7 @@
 capi = {}
 
+-- Usefull
+
 capi.px = function()
   return math.floor(getLocal().pos.x/32)
 end
@@ -115,9 +117,16 @@ capi.cpos = function(x,y,id,rad)
   end
 end
 
-logToConsole("`4[@AKM?] : CApi Is Loaded")
+-- Useless
 
-function SDialog(struct)
+capi.sover = function(txt)
+  var = {}
+  var[0] = "OnTextOverlay"
+  var[1] = txt
+  sendVariant(var)
+end
+
+capi.sdial = function(struct)
   var = {}
   var[0] = "OnDialogRequest"
   var[1] = struct
@@ -131,9 +140,11 @@ function hook(type, pkt)
       for i,v in pairs(capi) do
         dump = dump.."add_smalltext|"..i.."()|\n"
       end
-      SDialog(dump)
+      capi.sdial(dump)
     end
   end
 end
 
 AddHook("OnTextPacket", "jdjjx", hook)
+
+logToConsole("`4[@AKM?] : CApi Is Loaded")
