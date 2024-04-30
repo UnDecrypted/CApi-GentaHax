@@ -80,6 +80,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     return : none
     usage : to send overlay text
   }
+  {
+    api : sdial(str struct)
+    return : none
+    usage : to send dialog struct
+  }
 }
 ```
 
