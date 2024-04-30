@@ -20,11 +20,11 @@ end
 
 capi.warp = function(world,path)
   while getWorld().name ~= world:upper() do
-    sendPacket(3,"action|join_request\nname|"..w.."|"..p.."\ninvitedWorld|0")
+    sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
     sleep(1000)
   end
   while checkTile(math.floor(getLocal().pos.x/32),math.floor(getLocal().pos.y/32)).fg == 6 do
-    sendPacket(3,"action|join_request\nname|"..w.."|"..p.."\ninvitedWorld|0")
+    sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
     sleep(1000)
   end
 end
