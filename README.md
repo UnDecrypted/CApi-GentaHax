@@ -39,6 +39,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to get amount of item in inventory
   }
   {
+    api : warp(str world, str path)
+    return : none
+    usage : to warp into specific world and path
+  }
+  {
     api : punch(int x, int y)
     return : none
     usage : to punch tile in specific x and y
