@@ -22,7 +22,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h4 align="center">List Of Custom Api</h4>
 
 ```
-{
+{ Usefull
   {
     api : px()
     return : int
@@ -72,6 +72,13 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     api : cpos(int x, int y, int id, number radius)
     return : none
     usage : to collect floating item in specific x, y, id / nil to collect all and radius is detect range of item
+  }
+}
+{ Useless
+  {
+    api : sover(str txt)
+    return : none
+    usage : to send overlay text
   }
 }
 ```
