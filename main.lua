@@ -1,5 +1,13 @@
 capi = {}
 
+capi.px = function()
+  return math.floor(getLocal().pos.x/32)
+end
+
+capi.py = function()
+  return math.floor(getLocal().pos.y/32)
+end
+
 capi.cinv = function(id)
   for i, v in pairs(getInventory()) do
     if v.id == id then
@@ -97,3 +105,17 @@ capi.cpos = function(x,y,id,rad)
 end
 
 logToConsole("`4[@AKM?] : CApi Is Loaded")
+
+function hook(type, pkt)
+  if pkt:find("action|input\n|text|") then
+    if pkt:find("/api") then
+      local dump = "`9list of api\n"
+      for i, v in pairs(capi) do
+        dump = dump..i.."()\n"
+      end
+      logToConsole(dump)
+    end
+  end
+end
+
+AddHook("OnTextPacket", "jdjjx", hook)
