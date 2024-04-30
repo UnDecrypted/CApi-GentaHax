@@ -44,6 +44,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to warp into specific world and path
   }
   {
+    api : invtp(int x, int y)
+    return : none
+    usage : to teleport in server only specific x and y
+  }
+  {
     api : punch(int x, int y)
     return : none
     usage : to punch tile in specific x and y
