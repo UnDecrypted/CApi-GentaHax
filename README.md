@@ -2,7 +2,8 @@
 
 <h6>Genta Hax</h6>
 
-[discord](https://discord.com/invite/genta7740)
+[GentaHax Discord](https://discord.com/invite/genta7740)
+[My Skibidi Discord](https://discord.com/invite/Gd44CJYX)
 
 <h4 align="center">What Is CApi?</h4>
 
