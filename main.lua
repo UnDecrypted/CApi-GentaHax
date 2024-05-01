@@ -10,6 +10,10 @@ capi.py = function()
   return math.floor(getLocal().pos.y/32)
 end
 
+capi.recon = function()
+  sendVariant({[0] = "OnReconnect"},-1)
+end
+
 capi.cinv = function(id)
   for i, v in pairs(getInventory()) do
     if v.id == id then
@@ -44,7 +48,7 @@ capi.warp = function(world,path)
   doLog("done")
 end
 
-capi.invtp = function(x,y)
+capi.vistp = function(x,y)
   pkt = {}
   pkt.type = 0
   pkt.value = 32
