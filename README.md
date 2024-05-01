@@ -38,6 +38,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to reconnect from server
   }
   {
+    api : wear(int clothes id)
+    return : none
+    usage : to wear specific clothes
+  }
+  {
     api : cinv(int id)
     return : int
     usage : to get amount of item in inventory
