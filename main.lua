@@ -14,6 +14,14 @@ capi.recon = function()
   sendVariant({[0] = "OnReconnect"},-1)
 end
 
+capi.wear = function(cid)
+  sendPacketRaw(false,
+  {
+  type = 10,
+  value = cid, 
+  })
+end
+
 capi.cinv = function(id)
   for i, v in pairs(getInventory()) do
     if v.id == id then
