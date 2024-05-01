@@ -100,9 +100,7 @@ end
 
 capi.drop = function(id,amount,delay)
   sendPacket(2,"action|drop\n|itemID|"..id)
-  sleep(delay)
- 
- sendPacket(2,"action|dialog_return\ndialog_name|drop_item\nitemID|"..id.."|\ncount|"..amount)
+  sendPacket(2,"action|dialog_return\ndialog_name|drop_item\nitemID|"..id.."|\ncount|"..amount)
   sleep(delay)
 end
 
