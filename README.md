@@ -34,6 +34,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to get player current y position
   }
   {
+    api : recon()
+    return : none
+    usage : to reconnect from server
+  }
+  {
     api : cinv(int id)
     return : int
     usage : to get amount of item in inventory
@@ -44,7 +49,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to warp into specific world and path
   }
   {
-    api : invtp(int x, int y)
+    api : vistp(int x, int y)
     return : none
     usage : to teleport in server only specific x and y
   }
