@@ -1,12 +1,8 @@
 <h4 align="center">Credit</h4>
 
-<h6>Genta Hax</h6>
-
 [GentaHax Discord](https://discord.com/invite/genta7740)
-<h6>Ma Friend Discord</h6>
 
 [Satan Lua Discord](https://discord.com/invite/hEyMkPMj)
-<h6>My Discrot</h6>
 
 [My Skibidi Discord](https://discord.com/invite/Gd44CJYX)
 
