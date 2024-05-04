@@ -16,7 +16,7 @@ end
 
 capi.wear = function(cid)
   if not cid then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.wear(Clothes ID : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.wear(Clothes ID : Int)")
     return
   end
   sendPacketRaw(false,
@@ -28,7 +28,7 @@ end
 
 capi.cinv = function(id)
   if not id then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.cinv(Item ID : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.cinv(Item ID : Int)")
     return
   end
   for i, v in pairs(getInventory()) do
@@ -40,7 +40,7 @@ end
 
 capi.warp = function(world,path)
   if not world or not path then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.warp(World : Str,Path : Str)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.warp(World : Str,Path : Str)")
     return
   end
   local looped = 0
@@ -69,7 +69,7 @@ end
 
 capi.vistp = function(x,y)
   if not x or not y then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.vistp(Tile X : Int,Tile Y : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.vistp(Tile X : Int,Tile Y : Int)")
     return
   end
   pkt = {}
@@ -82,7 +82,7 @@ end
 
 capi.punch = function(x,y)
   if not x or not y then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.punch(Tile X : Int,Tile Y : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.punch(Tile X : Int,Tile Y : Int)")
     return
   end
   pkt = {}
@@ -97,7 +97,7 @@ end
 
 capi.wrench = function(x,y)
   if not x or not y then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.wrench(Tile X : Int,Tile Y : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.wrench(Tile X : Int,Tile Y : Int)")
     return
   end
   pkt = {}
@@ -112,7 +112,7 @@ end
 
 capi.place = function(x,y,id)
   if not x or not y or not id then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.place(Tile X : Int,Tile Y : Int,Block ID : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.place(Tile X : Int,Tile Y : Int,Block ID : Int)")
     return
   end
   pkt = {}
@@ -127,7 +127,7 @@ end
 
 capi.drop = function(id,amount,delay)
   if not id or not amount or not delay then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.drop(Item ID : Int,Amount : Int,Delay : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.drop(Item ID : Int,Amount : Int,Delay : Int)")
     return
   end
   sendPacket(2,"action|drop\n|itemID|"..id)
@@ -137,7 +137,7 @@ end
 
 capi.cdpos = function(x,y,rad)
   if not x or not y or not rad then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.cdpos(Tile X : Int,Tile Y : Int,Radius : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.cdpos(Tile X : Int,Tile Y : Int,Radius : Int)")
     return
   end
   local TotalAmount = 0
@@ -155,7 +155,7 @@ end
 
 capi.cpos = function(x,y,id,rad)
   if not x or not y or not id or not rad then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.cpos(Tile X : Int,Tile Y : Int,Item ID : Int,Radius : Int)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.cpos(Tile X : Int,Tile Y : Int,Item ID : Int,Radius : Int)")
     return
   end
   local CItem = {}
@@ -194,7 +194,7 @@ end
 
 capi.sover = function(txt)
   if not txt then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.sover(Text : Str)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.sover(Text : Str)")
     return
   end
   var = {}
@@ -205,7 +205,7 @@ end
 
 capi.sdial = function(struct)
   if not struct then
-    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.sdial(Dialog Struct : Str)")
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.sdial(Dialog Struct : Str)")
     return
   end
   var = {}
