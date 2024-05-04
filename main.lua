@@ -15,6 +15,10 @@ capi.recon = function()
 end
 
 capi.wear = function(cid)
+  if not cid then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.wear(Clothes ID : Int)")
+    return
+  end
   sendPacketRaw(false,
   {
   type = 10,
@@ -23,6 +27,10 @@ capi.wear = function(cid)
 end
 
 capi.cinv = function(id)
+  if not id then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.cinv(Item ID : Int)")
+    return
+  end
   for i, v in pairs(getInventory()) do
     if v.id == id then
       return v.amount
@@ -31,9 +39,12 @@ capi.cinv = function(id)
 end
 
 capi.warp = function(world,path)
+  if not world or not path then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.warp(World : Str,Path : Str)")
+    return
+  end
   local looped = 0
   while getWorld().name ~= world:upper() do
-    doLog(getWorld().name.."/"..world:upper())
     looped = looped + 1
     sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
     sleep(1000)
@@ -45,6 +56,7 @@ capi.warp = function(world,path)
   looped = 0
   if checkTile(math.floor(getLocal().pos.x/32),math.floor(getLocal().pos.y/32)).fg then
     while checkTile(math.floor(getLocal().pos.x/32),math.floor(getLocal().pos.y/32)).fg == 6 do
+      looped = looped + 1
       sendPacket(3,"action|join_request\nname|"..world.."|"..path.."\ninvitedWorld|0")
       sleep(1000)
       if looped == 3 then
@@ -53,10 +65,13 @@ capi.warp = function(world,path)
       end
     end
   end
-  doLog("done")
 end
 
 capi.vistp = function(x,y)
+  if not x or not y then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.vistp(Tile X : Int,Tile Y : Int)")
+    return
+  end
   pkt = {}
   pkt.type = 0
   pkt.value = 32
@@ -66,6 +81,10 @@ capi.vistp = function(x,y)
 end
 
 capi.punch = function(x,y)
+  if not x or not y then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.punch(Tile X : Int,Tile Y : Int)")
+    return
+  end
   pkt = {}
   pkt.x = getLocal().pos.x
   pkt.y = getLocal().pos.y
@@ -77,6 +96,10 @@ capi.punch = function(x,y)
 end
 
 capi.wrench = function(x,y)
+  if not x or not y then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.wrench(Tile X : Int,Tile Y : Int)")
+    return
+  end
   pkt = {}
   pkt.x = getLocal().pos.x
   pkt.y = getLocal().pos.y
@@ -88,6 +111,10 @@ capi.wrench = function(x,y)
 end
 
 capi.place = function(x,y,id)
+  if not x or not y or not id then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.place(Tile X : Int,Tile Y : Int,Block ID : Int)")
+    return
+  end
   pkt = {}
   pkt.x = getLocal().pos.x
   pkt.y = getLocal().pos.y
@@ -99,12 +126,20 @@ capi.place = function(x,y,id)
 end
 
 capi.drop = function(id,amount,delay)
+  if not id or not amount or not delay then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.drop(Item ID : Int,Amount : Int,Delay : Int)")
+    return
+  end
   sendPacket(2,"action|drop\n|itemID|"..id)
   sendPacket(2,"action|dialog_return\ndialog_name|drop_item\nitemID|"..id.."|\ncount|"..amount)
   sleep(delay)
 end
 
 capi.cdpos = function(x,y,rad)
+  if not x or not y or not rad then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.cdpos(Tile X : Int,Tile Y : Int,Radius : Int)")
+    return
+  end
   local TotalAmount = 0
   for i, v in pairs(getWorldObject()) do
     local jx = math.abs(v.pos.x/32-x)
@@ -119,6 +154,10 @@ capi.cdpos = function(x,y,rad)
 end
 
 capi.cpos = function(x,y,id,rad)
+  if not x or not y or not id or not rad then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.cpos(Tile X : Int,Tile Y : Int,Item ID : Int,Radius : Int)")
+    return
+  end
   local CItem = {}
   for i, v in pairs(getWorldObject()) do
     if id ~= nil then
@@ -154,6 +193,10 @@ end
 -- Useless
 
 capi.sover = function(txt)
+  if not txt then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.sover(Text : Str)")
+    return
+  end
   var = {}
   var[0] = "OnTextOverlay"
   var[1] = txt
@@ -161,6 +204,10 @@ capi.sover = function(txt)
 end
 
 capi.sdial = function(struct)
+  if not struct then
+    capi.sover("[CApi Error] Some Argument Missing\nHere : capi.sdial(Dialog Struct : Str)")
+    return
+  end
   var = {}
   var[0] = "OnDialogRequest"
   var[1] = struct
