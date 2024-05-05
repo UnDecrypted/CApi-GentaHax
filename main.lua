@@ -26,6 +26,17 @@ capi.wear = function(cid)
   })
 end
 
+capi.change = function(id)
+  if not id then
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.change(Lock ID : Int)")
+    return
+  end
+  pkt = {}
+  pkt.type = 10;
+  pkt.value = id;
+  sendPacketRaw (false, pkt);
+end
+
 capi.cinv = function(id)
   if not id then
     capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.cinv(Item ID : Int)")
