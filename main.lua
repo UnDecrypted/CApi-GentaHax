@@ -41,6 +41,23 @@ capi.change = function(id)
   sendPacketRaw (false, pkt);
 end
 
+capi.collect = function(id)
+  if not id then
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.collect(Item ID : Int)")
+    return
+  end
+  for i, v in pairs(getWorldObject()) do
+    if v.id == id then
+      local pkt = {}
+      pkt.type = 11
+      pkt.value = v.oid
+      pkt.x = v.pos.x
+      pkt.y = v.pos.y
+      sendPacketRaw(false, pkt)
+    end
+  end
+end
+
 capi.cinv = function(id)
   if not id then
     capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.cinv(Item ID : Int)")
