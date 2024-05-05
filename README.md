@@ -38,6 +38,10 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to reconnect from server
   }
   {
+    api : conbgl()
+    return : none
+    usage : to convert dl to bgl
+  {
     api : wear(int clothes id)
     return : none
     usage : to wear specific clothes
