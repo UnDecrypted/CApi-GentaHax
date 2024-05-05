@@ -43,6 +43,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to wear specific clothes
   }
   {
+    api : change(int id)
+    return : none
+    usage : to change break lock or combine lock
+  }
+  {
     api : cinv(int id)
     return : int
     usage : to get amount of item in inventory
