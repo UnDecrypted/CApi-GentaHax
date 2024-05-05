@@ -14,6 +14,10 @@ capi.recon = function()
   sendVariant({[0] = "OnReconnect"},-1)
 end
 
+capi.conbgl = function()
+  sendPacket(2, "action|dialog_return\ndialog_name|3898\nbuttonClicked|chc2_2_1\n")
+end
+
 capi.wear = function(cid)
   if not cid then
     capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.wear(Clothes ID : Int)")
