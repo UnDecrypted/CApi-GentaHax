@@ -45,7 +45,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
   {
     api : change(int id)
     return : none
-    usage : to change break lock or combine lock
+    usage : to break lock or combine lock
   }
   {
     api : cinv(int id)
