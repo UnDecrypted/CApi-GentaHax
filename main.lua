@@ -47,7 +47,7 @@ capi.collect = function(id)
     return
   end
   for i, v in pairs(getWorldObject()) do
-    if v.id == id and checkPath(math.floor(v.pos.x/32),math.floor(v.pos.y/32)) then
+    if v.id == id then
       local pkt = {}
       pkt.type = 11
       pkt.value = v.oid
