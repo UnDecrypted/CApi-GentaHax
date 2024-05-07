@@ -101,6 +101,11 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     return : none
     usage : to collect floating item in specific x, y, id / nil to collect all and radius is detect range of item
   }
+  {
+    api : findpath(int x, int y, int delay, int scan tile radius)
+    return : none
+    usage : to move player to specific tile with custom logic that can calculate among tile
+  }
 }
 { Useless
   {
