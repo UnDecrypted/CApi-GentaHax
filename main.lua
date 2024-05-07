@@ -222,6 +222,157 @@ capi.cpos = function(x,y,id,rad)
   end
 end
 
+capi.findpath = function(x,y,pdelay,jscan)
+  if not x or not y or not pdelay or not jscan then
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.findpath(Tile X : Int,Tile Y : Int,Delay : Int,Scan Tile Radius : Int)")
+    return
+  end
+  local perror = 0
+  local timex = 0
+  local timey = 0
+  local MoveTo = function(x,y)
+    local success = findPath(math.floor(getLocal().pos.x/32)+x,math.floor(getLocal().pos.y/32)+y)
+    sleep(pdelay*math.abs(x))
+    sleep(pdelay*math.abs(y))
+    if success == true then
+      return success
+    end
+  end
+  while true do
+    if perror == 3 then
+      capi.sover("Path Error?")
+      break
+    end
+    local px = math.floor(getLocal().pos.x/32)
+    local py = math.floor(getLocal().pos.y/32)
+    timex = math.abs(px-x)
+    timey = math.abs(py-y)
+    if px < x then
+      if math.abs(px-x) > 10 then
+        if MoveTo(10,0) then
+        else
+          local spath = false
+          for i=jscan, 1, -1 do
+            if MoveTo(i,0) and spath == false then
+              spath = true
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      else
+        if MoveTo(1,0) then
+        else
+          local spath = false
+          for i=1, jscan, 1 do
+            if MoveTo(i,0) and spath == false then
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      end
+    end
+    if px > x then
+      if math.abs(px-x) > 10 then
+        if MoveTo(-10,0) then
+        else
+          local spath = false
+          for i=jscan, 1, -1 do
+            if MoveTo(-i,0) and spath == false then
+              spath = true
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      else
+        if MoveTo(-1,0) then
+        else
+          local spath = false
+          for i=1, jscan, 1 do
+            if MoveTo(-i,0) and spath == false then
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      end
+    end
+    if py < y then
+      if math.abs(py-y) > 10 then
+        if MoveTo(0,10) then
+        else
+          local spath = false
+          for i=jscan, 1, -1 do
+            if MoveTo(0,i) and spath == false then
+              spath = true
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      else
+        if MoveTo(0,1) then
+        else
+          local spath = false
+          for i=1, jscan, 1 do
+            if MoveTo(0,i) and spath == false then
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      end
+    end
+    if py > y then
+      if math.abs(py-y) > 10 then
+        if MoveTo(0,-10) then
+        else
+          local spath = false
+          for i=jscan, 1, -1 do
+            if MoveTo(0,-i) and spath == false then
+              spath = true
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      else
+        if MoveTo(0,-1) then
+        else
+          local spath = false
+          for i=1, jscan, 1 do
+            if MoveTo(0,-i) and spath == false then
+              return
+            end
+          end
+          if spath == false then
+            perror = perror + 1
+          end
+        end
+      end
+    end
+    if px == x and py == y then
+      break
+    end
+  end
+end
+
 -- Useless
 
 capi.sover = function(txt)
