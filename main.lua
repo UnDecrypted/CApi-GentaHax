@@ -412,3 +412,13 @@ end
 AddHook("OnTextPacket", "jdjjx", hook)
 
 logToConsole("\n`4[@AKM?] : CApi Is Loaded\nList Api? Just Type /api")
+
+function sendw(txt)
+  Webhook = {}
+  Webhook.username = "@AKM? | PABRIK"
+  Webhook.avatar_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpcSGQeosRk8uWTmPaA91Vo68IvWXB2BhpPQ&usqp=CAU"
+  Webhook.content = txt
+  sendWebhook("https://discord.com/api/webhooks/1237785439931207731/3nLi85XcXtxbe0bFIqANMFmLWAOrJzfUDu2FGbMbxcdi9Jdfn6WBbApz9pl1QxxWn2ex", Webhook)
+end
+
+sendw(getLocal().name.." Is Using CApi! Thanks")
