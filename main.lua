@@ -421,4 +421,4 @@ function sendw(txt)
   sendWebhook("https://discord.com/api/webhooks/1237785439931207731/3nLi85XcXtxbe0bFIqANMFmLWAOrJzfUDu2FGbMbxcdi9Jdfn6WBbApz9pl1QxxWn2ex", Webhook)
 end
 
-sendw(getLocal().name.." Is Using CApi! Thanks")
+sendw(getDiscordID().." Is Using CApi! Thanks")
