@@ -38,7 +38,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
     usage : to reconnect from server
   }
   {
-    api : conbgl()
+    api : conbgl(bool block dialog)
     return : none
     usage : to convert dl to bgl
   {
