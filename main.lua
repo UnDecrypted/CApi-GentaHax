@@ -2,6 +2,8 @@ capi = {}
 
 -- Usefull
 
+local block_dialog = false
+
 capi.px = function()
   return math.floor(getLocal().pos.x/32)
 end
@@ -14,7 +16,14 @@ capi.recon = function()
   sendVariant({[0] = "OnReconnect"},-1)
 end
 
-capi.conbgl = function()
+capi.conbgl = function(bdialog)
+  if not bdialog then
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.conbgl(Block Dialog : Bool)")
+    return
+  end
+  if bdialog == true then
+    block_dialog = true
+  end
   sendPacket(2, "action|dialog_return\ndialog_name|3898\nbuttonClicked|chc2_2_1\n")
 end
 
@@ -397,7 +406,7 @@ capi.sdial = function(struct)
   sendVariant(var)
 end
 
-function hook(type, pkt)
+function pktfunc(type, pkt)
   if pkt:find("action|input\n|text|") then
     if pkt:find("/api") then
       local dump = "add_label_with_icon|big|`9[CApi] Api List``|left|1796"
@@ -409,6 +418,17 @@ function hook(type, pkt)
   end
 end
 
-AddHook("OnTextPacket", "jdjjx", hook)
+function hook(var)
+  if var[0] == "OnDialogRequest" then
+    if block_dialog == true then
+      block_dialog = false
+      return true
+    end
+  end
+end
+
+AddHook("OnVarlist", "var", hook)
+
+AddHook("OnTextPacket", "jdjjx", pktfunc)
 
 logToConsole("\n`4[@AKM?] : CApi Is Loaded\nList Api? Just Type /api")
