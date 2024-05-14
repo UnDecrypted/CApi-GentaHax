@@ -57,11 +57,11 @@ capi.info = {
     ["usage"] = "to check floating item on specific tile"
   },
   ["drop"] = {
-    ["cmd"] = "drop(Item ID : Int,Amount : Int,Block Dialog : Bool)",
+    ["cmd"] = "drop(Item ID : Int,Amount : Int,Delay : Int,Block Dialog : Bool)",
     ["usage"] = "to drop specific item"
   },
   ["trash"] = {
-    ["cmd"] = "trash(Item ID : Int,Amount : Int,Block Dialog : Bool)",
+    ["cmd"] = "trash(Item ID : Int,Amount : Int,Delay : Int,Block Dialog : Bool)",
     ["usage"] = "to trash specific item"
   },
   ["cpos"] = {
