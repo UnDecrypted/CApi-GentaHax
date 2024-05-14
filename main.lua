@@ -269,7 +269,7 @@ capi.drop = function(id,amount,delay,bdialog)
 end
 
 capi.trash = function(id,amount,delay,bdialog)
-  if not id or not amount or not delay or bdialog then
+  if not id or not amount or not delay or not bdialog then
     capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.trash(Item ID : Int,Amount : Int,Delay : Int,Block Dialog : Bool)")
     return
   end
