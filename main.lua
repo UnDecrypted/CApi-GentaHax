@@ -1,4 +1,78 @@
 capi = {}
+capi.info = {
+  ["px"] = {
+    ["cmd"] = "px()",
+    ["usage"] = "to get player x"
+  },
+  ["py"] = {
+    ["cmd"] = "py()",
+    ["usage"] = "to get player y"
+  },
+  ["recon"] = {
+    ["cmd"] = "recon()",
+    ["usage"] = "to reconnect from server"
+  },
+  ["conbgl"] = {
+    ["cmd"] = "conbgl(Block Dialog : Bool)",
+    ["usage"] = "to convery diamond lock to bgl"
+  },
+  ["wear"] = {
+    ["cmd"] = "wear(Clothes ID : Int)",
+    ["usage"] = "to set player costume"
+  },
+  ["change"] = {
+    ["cmd"] = "change(Block ID : Int)",
+    ["usage"] = "to convert wl to dl or dl to wl"
+  },
+  ["collect"] = {
+    ["cmd"] = "collect(Item ID : Int)",
+    ["usage"] = "to brute collect all specific item"
+  },
+  ["cinv"] = {
+    ["cmd"] = "cinv(Item ID : Int)",
+    ["usage"] = "to check inventory of player"
+  },
+  ["warp"] = {
+    ["cmd"] = "warp(World : Str,Path : Str)",
+    ["usage"] = "to join world"
+  },
+  ["vistp"] = {
+    ["cmd"] = "vistp(X : Int,Y : Int)",
+    ["usage"] = "to teleport player but only on server not client"
+  },
+  ["punch"] = {
+    ["cmd"] = "punch(X : Int,Y : Int)",
+    ["usage"] = "to punch specific tile"
+  },
+  ["wrench"] = {
+    ["cmd"] = "wrench(X : Int,Y : Int)",
+    ["usage"] = "to wrench specific tile"
+  },
+  ["place"] = {
+    ["cmd"] = "place(X : Int,Y : Int,Block ID : Int)",
+    ["usage"] = "to place block on specific tile"
+  },
+  ["cdpos"] = {
+    ["cmd"] = "cdpos(X : Int,Y : Int,Radius : Num)",
+    ["usage"] = "to check floating item on specific tile"
+  },
+  ["drop"] = {
+    ["cmd"] = "drop(Item ID : Int,Amount : Int,Block Dialog : Bool)",
+    ["usage"] = "to drop specific item"
+  },
+  ["trash"] = {
+    ["cmd"] = "trash()",
+    ["usage"] = "to trash specific item"
+  },
+  ["cpos"] = {
+    ["cmd"] = "cpos(X : Int,Y : Int,Item ID : Int,Radius : Num)",
+    ["usage"] = "to collect item at specific tile, item id = nil to collect all"
+  },
+  ["findpath"] = {
+    ["cmd"] = "findpath()",
+    ["usage"] = "still error"
+  }
+}
 
 -- Usefull
 
@@ -21,9 +95,7 @@ capi.conbgl = function(bdialog)
     capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.conbgl(Block Dialog : Bool)")
     return
   end
-  if bdialog == true then
-    block_dialog = true
-  end
+  block_dialog = bdialog
   sendPacket(2, "action|dialog_return\ndialog_name|3898\nbuttonClicked|chc2_2_1\n")
 end
 
@@ -166,16 +238,6 @@ capi.place = function(x,y,id)
   sendPacketRaw(false, pkt);
 end
 
-capi.drop = function(id,amount,delay)
-  if not id or not amount or not delay then
-    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.drop(Item ID : Int,Amount : Int,Delay : Int)")
-    return
-  end
-  sendPacket(2,"action|drop\n|itemID|"..id)
-  sendPacket(2,"action|dialog_return\ndialog_name|drop_item\nitemID|"..id.."|\ncount|"..amount)
-  sleep(delay)
-end
-
 capi.cdpos = function(x,y,rad)
   if not x or not y or not rad then
     capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.cdpos(Tile X : Int,Tile Y : Int,Radius : Int)")
@@ -192,6 +254,30 @@ capi.cdpos = function(x,y,rad)
     end
   end
   return TotalAmount
+end
+
+capi.drop = function(id,amount,delay,bdialog)
+  if not id or not amount or not delay or not bdialog then
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.drop(Item ID : Int,Amount : Int,Delay : Int,Block Dialog : Bool)")
+    return
+  end
+  block_dialog = bdialog
+  sendPacket(2,"action|drop\n|itemID|"..id)
+  sleep(delay)
+  sendPacket(2,"action|dialog_return\ndialog_name|drop_item\nitemID|"..id.."|\ncount|"..amount)
+  sleep(delay)
+end
+
+capi.trash = function(id,amount,delay,bdialog)
+  if not id or not amount or not delay or bdialog then
+    capi.sover("[CApi Error]\nSome Argument Missing\nHere : capi.trash(Item ID : Int,Amount : Int,Delay : Int,Block Dialog : Bool)")
+    return
+  end
+  block_dialog = bdialog
+  sendPacket(2, "action|trash\n|itemID|"..id)
+  sleep(delay)
+  sendPacket(2, "action|dialog_return\ndialog_name|trash_item\nitemID|15|\ncount|1")
+  sleep(delay)
 end
 
 capi.cpos = function(x,y,id,rad)
@@ -410,8 +496,8 @@ function pktfunc(type, pkt)
   if pkt:find("action|input\n|text|") then
     if pkt:find("/api") then
       local dump = "add_label_with_icon|big|`9[CApi] Api List``|left|1796"
-      for i,v in pairs(capi) do
-        dump = dump.."add_smalltext|"..i.."()|\n"
+      for i,v in pairs(capi.info) do
+        dump = dump.."add_smalltext|"..i.." : "..v.cmd.."|\n"
       end
       capi.sdial(dump)
     end
