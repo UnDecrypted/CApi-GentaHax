@@ -1,4 +1,5 @@
 capi = {}
+capi.ver = "1.0"
 capi.info = {
   ["px"] = {
     ["cmd"] = "px()",
@@ -495,7 +496,7 @@ end
 function pktfunc(type, pkt)
   if pkt:find("action|input\n|text|") then
     if pkt:find("/api") then
-      local dump = "add_label_with_icon|big|`9[CApi] Api List``|left|1796"
+      local dump = "add_label_with_icon|big|`9[CApi : "..capi.ver.."] Api List``|left|1796"
       for i,v in pairs(capi.info) do
         dump = dump.."add_smalltext|"..i.." : "..v.cmd.."|\n"
       end
