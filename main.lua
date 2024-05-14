@@ -61,7 +61,7 @@ capi.info = {
     ["usage"] = "to drop specific item"
   },
   ["trash"] = {
-    ["cmd"] = "trash()",
+    ["cmd"] = "trash(Item ID : Int,Amount : Int,Block Dialog : Bool)",
     ["usage"] = "to trash specific item"
   },
   ["cpos"] = {
