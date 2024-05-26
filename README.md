@@ -124,7 +124,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h4 align="center">How To Use CApi</h4>
 
 ```
-int = capi.cinv(242)
+int = cinv(242)
 doLog(int)
 ```
 
