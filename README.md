@@ -39,13 +39,39 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |Function|Utility|
 |-|-|
 |cbgl(bdialog : bool)|change dl to bgl|
-|dtap(id)|to double tap item in inventory [wl/dl/bgl]|
-|check(id)|get amount of item|
+|dtap(id : int)|to double tap item in inventory [wl/dl/bgl]|
+|check(id : int)|get amount of item|
+
+<h2 align="center">Tile</h2>
+
+#### Tile Struct
+|Function|Utility|
+|-|-|
+|punch(x : int,y : int)|to punch specific tile|
+|wrench(x : int,y : int)|to wrench specific tile|
+|place(x : int,y : int,id : int)|to place specific tile|
+
+<h2 align="center">Objects</h2>
+
+#### Tile Struct
+|Function|Utility|
+|-|-|
+|collect(id : int,delay : int)|to collect specific item|
+|cfloat(x : int,y : int,rad : num)|to check how much floating item in specific tile|
+|collectpos(x : int,y : int,id : int,id : int,rad : num)|to collect at specific tile and specific id / nil to collect all|
+
+<h2 align="center">Log</h2>
+
+#### Tile Struct
+|Function|Utility|
+|-|-|
+|overlay(txt : string)|to send overlay at screen|
+|dialog(struct : string)|to send dialog at screen|
 
 <h4 align="center">How To Use CApi</h4>
 
 ```
-int = cinv(242)
+int = inventory():check(242)
 doLog(int)
 ```
 
