@@ -23,6 +23,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 ## Player Struct
 |Function|Utility|
+|-|-|
 |px()|get player x|
 |py()|get player y|
 |reconnect()|to reconnect from server|
