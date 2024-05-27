@@ -22,11 +22,12 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h2 align="center">Player</h2>
 
 ## Player Struct
-|Function Name|Utility                 |
+|Function Name|Utility|
 |-------------|------------------------|
-|px()         |get player x            |
-|py()         |get player y            |
-|reconnect()  |to reconnect from server|
+|px()|get player x|
+|py()|get player y|
+|reconnect()|to reconnect from server|
+|wear()|to set player clothes|
 
 <h4 align="center">How To Use CApi</h4>
 
