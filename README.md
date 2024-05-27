@@ -22,12 +22,14 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h2 align="center">Player</h2>
 
 ## Player Struct
-|Function Name|Utility|
-|-------------|------------------------|
+|Function|Utility|
 |px()|get player x|
 |py()|get player y|
 |reconnect()|to reconnect from server|
-|wear()|to set player clothes|
+|wear(id : int)|to set player clothes|
+|tp(x : int,y : int)|to teleport player|
+|drop(id : int,amount : int,delay : int,bdialog : bool)|to drop specific item|
+|trash(id : int,amount : int,delay : amount,bdialog : bool)|to trash specific item|
 
 <h4 align="center">How To Use CApi</h4>
 
