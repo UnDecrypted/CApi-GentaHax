@@ -33,6 +33,15 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |drop(id : int,amount : int,delay : int,bdialog : bool)|to drop specific item|
 |trash(id : int,amount : int,delay : amount,bdialog : bool)|to trash specific item|
 
+<h4 align="center">Players</h4>
+
+#### Players Struct
+|Function|Utility|
+|-|-|
+|getbyname(name : string)|get player by name :pull(),:kick(),:ban()|
+|getbyuserid(id : int)|get player by user id :pull(),:kick(),:ban()|
+|getbynetid(netid : int)|get player by net id :pull(),:kick(),:ban()|
+
 <h4 align="center">Inventory</h4>
 
 #### Inventory Struct
@@ -71,8 +80,6 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h2 align="center">How To Use CApi</h2>
 
 ```
-load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/main/main.lua", "GET").content)()
-
 int = inventory():check(242)
 doLog(int)
 ```
