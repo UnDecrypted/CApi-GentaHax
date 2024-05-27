@@ -71,6 +71,8 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h2 align="center">How To Use CApi</h2>
 
 ```
+load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/main/main.lua", "GET").content)()
+
 int = inventory():check(242)
 doLog(int)
 ```
