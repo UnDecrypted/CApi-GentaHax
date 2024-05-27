@@ -53,7 +53,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h2 align="center">Objects</h2>
 
-#### Tile Struct
+#### Objects Struct
 |Function|Utility|
 |-|-|
 |collect(id : int,delay : int)|to collect specific item|
@@ -62,7 +62,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h2 align="center">Log</h2>
 
-#### Tile Struct
+#### Log Struct
 |Function|Utility|
 |-|-|
 |overlay(txt : string)|to send overlay at screen|
