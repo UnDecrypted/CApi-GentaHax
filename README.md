@@ -33,23 +33,14 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |drop(id : int,amount : int,delay : int,bdialog : bool)|to drop specific item|
 |trash(id : int,amount : int,delay : amount,bdialog : bool)|to trash specific item|
 
-<h4 align="center">Players</h4>
-
-#### Players Struct
-|Function|Utility|
-|-|-|
-|getbyname(name : string)|get player by name :pull(),:kick(),:ban()|
-|getbyuserid(id : int)|get player by user id :pull(),:kick(),:ban()|
-|getbynetid(netid : int)|get player by net id :pull(),:kick(),:ban()|
-
 <h4 align="center">Inventory</h4>
 
 #### Inventory Struct
 |Function|Utility|
 |-|-|
-|cbgl(bdialog : bool)|change dl to bgl|
-|dtap(id : int)|to double tap item in inventory [wl/dl/bgl]|
-|check(id : int)|get amount of item|
+|conbgl(bdialog : bool)|change dl to bgl|
+|change(id : int)|to double tap item in inventory [wl/dl/bgl]|
+|cinv(id : int)|get amount of item|
 
 <h4 align="center">Tile</h4>
 
@@ -62,26 +53,26 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h4 align="center">Objects</h4>
 
-#### Tile Struct
+#### Objects Struct
 |Function|Utility|
 |-|-|
 |collect(id : int,delay : int)|to collect specific item|
-|cfloat(x : int,y : int,rad : num)|to check how much floating item in specific tile|
-|collectpos(x : int,y : int,id : int,id : int,rad : num)|to collect at specific tile and specific id / nil to collect all|
+|cdpos(x : int,y : int,rad : num)|to check how much floating item in specific tile|
+|cpos(x : int,y : int,id : int,id : int,rad : num)|to collect at specific tile and specific id / nil to collect all|
 
 <h4 align="center">Log</h4>
 
-#### Tile Struct
+#### Screen Struct
 |Function|Utility|
 |-|-|
-|overlay(txt : string)|to send overlay at screen|
-|dialog(struct : string)|to send dialog at screen|
+|sover(txt : string)|to send overlay at screen|
+|sdial(struct : string)|to send dialog at screen|
 
 <h2 align="center">How To Use CApi</h2>
 
 ```
-int = inventory():check(242)
-doLog(int)
+int = cinv(242) --Calling To Get Amount Item
+doLog(int)  --Print It Out
 ```
 
 > Just Try It So U Know How To Use It
