@@ -32,8 +32,8 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |wear(id : int)|to set player clothes|
 |warp(world : str,path : str)|warp world|
 |tp(x : int,y : int)|to teleport player|
-|drop(id : int,amount : int,delay : int,bdialog : bool)|to drop specific item|
-|trash(id : int,amount : int,delay : amount,bdialog : bool)|to trash specific item|
+|drop(id : int,amount : int,delay : int)|to drop specific item|
+|trash(id : int,amount : int,delay : amount)|to trash specific item|
 
 <h4 align="center">Players</h4>
 
