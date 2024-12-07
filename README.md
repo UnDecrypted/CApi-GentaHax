@@ -89,8 +89,10 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 <h2 align="center">How To Use CApi</h2>
 
 ```
+load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/main/main.lua", "GET").content)() --Load Capi
+
 int = inventory():cinv(242) --Calling To Get Amount Item
-doLog(int)  --Print It Out
+doLog(int) --Print It Out
 ```
 
 > Just Try It So U Know How To Use It
