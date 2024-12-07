@@ -34,6 +34,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |tp(x : int,y : int)|to teleport player|
 |drop(id : int,amount : int)|to drop specific item|
 |trash(id : int,amount : int)|to trash specific item|
+|pathfind(x : int,y : int)|astar pathfind|
 
 <h4 align="center">Players</h4>
 
@@ -58,7 +59,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |-|-|
 |conbgl(bdialog : bool)|change dl to bgl|
 |change(id : int)|to double tap item in inventory [wl/dl/bgl]|
-|chevk(id : int)|get amount of item|
+|check(id : int)|get amount of item|
 
 <h4 align="center">Tile</h4>
 
