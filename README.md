@@ -34,7 +34,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |tp(x : int,y : int)|to teleport player|
 |drop(id : int,amount : int)|to drop specific item|
 |trash(id : int,amount : int)|to trash specific item|
-|pathfind(x : int,y : int)|astar pathfind|
+|pathfind(x : int,y : int)|astar pathfind (Broken)|
 
 <h4 align="center">Players</h4>
 
