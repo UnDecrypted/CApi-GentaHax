@@ -58,7 +58,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 |-|-|
 |conbgl(bdialog : bool)|change dl to bgl|
 |change(id : int)|to double tap item in inventory [wl/dl/bgl]|
-|cinv(id : int)|get amount of item|
+|chevk(id : int)|get amount of item|
 
 <h4 align="center">Tile</h4>
 
@@ -91,8 +91,8 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 ```
 load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/main/main.lua", "GET").content)() --Load Capi
 
-int = inventory():cinv(242) --Calling To Get Amount Item
-doLog(int) --Print It Out
+int = inventory():check(242) --Calling To Get Amount Item
+player():chat("My World Lock "..int) --Print It Out
 ```
 
 > Just Try It So U Know How To Use It
