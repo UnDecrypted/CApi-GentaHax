@@ -22,20 +22,38 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h4 align="center">Player</h4>
 
-#### Player Struct
+#### Player Commands
 |Function|Utility|
 |-|-|
 |px()|get player x|
 |py()|get player y|
 |reconnect()|to reconnect from server|
+|chat(txt : str)|to make player chat|
 |wear(id : int)|to set player clothes|
+|warp(world : str,path : str)|warp world|
 |tp(x : int,y : int)|to teleport player|
 |drop(id : int,amount : int,delay : int,bdialog : bool)|to drop specific item|
 |trash(id : int,amount : int,delay : amount,bdialog : bool)|to trash specific item|
 
+<h4 align="center">Players</h4>
+
+#### Players Commands
+|Function|Utility|
+|-|-|
+|getbyname(name : str)|get player by name|
+|getbyuserid(id : int)|get player by user id|
+|getbynetid(id : int)|get player by net id|
+
+#### Players Struct
+|Function|Utility|
+|-|-|
+|pull()|to pull returned player|
+|kick()|to kick returned player|
+|ban()|to ban returned player|
+
 <h4 align="center">Inventory</h4>
 
-#### Inventory Struct
+#### Inventory Commands
 |Function|Utility|
 |-|-|
 |conbgl(bdialog : bool)|change dl to bgl|
@@ -44,7 +62,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h4 align="center">Tile</h4>
 
-#### Tile Struct
+#### Tile Commands
 |Function|Utility|
 |-|-|
 |punch(x : int,y : int)|to punch specific tile|
@@ -53,7 +71,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h4 align="center">Objects</h4>
 
-#### Objects Struct
+#### Objects Commands
 |Function|Utility|
 |-|-|
 |collect(id : int,delay : int)|to collect specific item|
@@ -62,7 +80,7 @@ load(makeRequest("https://raw.githubusercontent.com/UnDecrypted/CApi-GentaHax/ma
 
 <h4 align="center">Log</h4>
 
-#### Screen Struct
+#### Screen Commands
 |Function|Utility|
 |-|-|
 |sover(txt : string)|to send overlay at screen|
