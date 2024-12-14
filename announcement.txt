@@ -1,3 +1,6 @@
-Ga Ada Wak
-Sigma boy
-Sigma sigma boy
+return {
+  ["bab"] = {
+    "isidiisis",
+    "kwnehej"
+  }
+}
