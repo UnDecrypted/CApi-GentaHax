@@ -10,7 +10,8 @@ add_label_with_icon|small|`1Hello, ]]..getLocal().name..[[``|left|9474|
 add_label_with_icon|small|`1Today : [ ]]..os.date("%d %B, %Y")..[[ ]``|left|9474|
 add_label_with_icon|small|`1Time : [ ]]..os.date("%H : %M")..[[ ]``|left|9474|
 add_textbox|`c[==================================================================]|left|
-add_label_with_icon|small|`cKONTOLLLL``|left|9474|
+add_label_with_icon|small|`cAdded Vend Api``|left|9590|
+add_label_with_icon|small|`cAdded Sucker Api (UT/GAIA/MAGPLANT)``|left|9590|
 end_dialog|zz|Close||
 add_quick_exit|
 ]]
