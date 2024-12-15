@@ -1,4 +1,4 @@
-return [[
+[[
 
 set_border_color|112,86,191,255
 set_bg_color|43,34,74,200
