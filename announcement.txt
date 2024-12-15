@@ -1,6 +1,4 @@
 return {
-  ["bab"] = {
-    "isidiisis",
-    "kwnehej"
-  }
+  "Kontol Lo Bauk",
+  "Kontol Si 4WIZXY Bauk"
 }
