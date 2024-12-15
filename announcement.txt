@@ -1,4 +1,16 @@
-return {
-  "Kontol Lo Bauk",
-  "Kontol Si 4WIZXY Bauk"
-}
+return [[
+
+set_border_color|112,86,191,255
+set_bg_color|43,34,74,200
+set_default_color|`o
+
+add_label_with_icon|big|`cCApi News``|left|3524|
+add_textbox|`c[==================================================================]|left|
+add_label_with_icon|small|`1Hello, ]]..getLocal().name..[[``|left|9474|
+add_label_with_icon|small|`1Today : [ ]]..os.date("%d %B, %Y")..[[ ]``|left|9474|
+add_label_with_icon|small|`1Time : [ ]]..os.date("%H : %M")..[[ ]``|left|9474|
+add_textbox|`c[==================================================================]|left|
+add_label_with_icon|small|`cKONTOLLLL``|left|9474|
+end_dialog|zz|Close||
+add_quick_exit|
+]]
