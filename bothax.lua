@@ -159,8 +159,8 @@ function player()
       end
       
       -- Example: walking from current position to (goalX, goalY)
-      local startX = math.floor(getLocal().pos.x / 32)
-      local startY = math.floor(getLocal().pos.y / 32)
+      local startX = math.floor(GetLocal().pos.x / 32)
+      local startY = math.floor(GetLocal().pos.y / 32)
       
       local path = pathfindAStar(startX, startY, goalX, goalY)
       if path then
