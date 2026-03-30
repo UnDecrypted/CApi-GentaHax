@@ -81,29 +81,96 @@ function player()
         SendPacket(2, "action|dialog_return\ndialog_name|trash_item\nitemID|" .. id .. "|\ncount|" .. amount .. "\n")
     end
 
-    function tab:pathfind(goalX, goalY)
-        local function heuristic(a, b)
-            return math.abs(a.x - b.x) + math.abs(a.y - b.y)
-        end
-
-        local function isWalkable(x, y)
-            local tile = GetTile(x, y)
-            return tile and tile.fg == 0 and tile.bg == 0 and not tile.collidable
-        end
-
-        local startX = tab:px()
-        local startY = tab:py()
-
-        local path = FindPath(goalX, goalY, 0)
-
-        if path then
-            for _, step in ipairs(path) do
-                FindPath(step.x, step.y)
-                Sleep(80)
-            end
-        else
-            LogToConsole("`4No valid path found.")
-        end
+    function tab:pathfind(goalX,goalY)
+      local function heuristic(a, b)
+          return math.abs(a.x - b.x) + math.abs(a.y - b.y)
+      end
+      
+      local function isWalkable(x, y)
+          local tile = GetTile(x, y)
+          return tile and tile.fg == 0 and tile.bg == 0 and not tile.collidable
+      end
+      
+      local function posKey(x, y)
+          return x .. "," .. y
+      end
+      
+      function pathfindAStar(startX, startY, goalX, goalY)
+          local openSet = {}
+          local cameFrom = {}
+          local gScore = {}
+          local fScore = {}
+      
+          local startKey = posKey(startX, startY)
+          gScore[startKey] = 0
+          fScore[startKey] = heuristic({x = startX, y = startY}, {x = goalX, y = goalY})
+      
+          table.insert(openSet, {x = startX, y = startY, f = fScore[startKey]})
+      
+          while #openSet > 0 do
+              table.sort(openSet, function(a, b) return a.f < b.f end)
+              local current = table.remove(openSet, 1)
+              local cx, cy = current.x, current.y
+      
+              if cx == goalX and cy == goalY then
+                  local path = {}
+                  local currKey = posKey(cx, cy)
+                  while cameFrom[currKey] do
+                      table.insert(path, 1, cameFrom[currKey].from)
+                      currKey = cameFrom[currKey].prev
+                  end
+                  return path
+              end
+      
+              local neighbors = {
+                  {x = cx + 1, y = cy},
+                  {x = cx - 1, y = cy},
+                  {x = cx, y = cy + 1},
+                  {x = cx, y = cy - 1}
+              }
+      
+              for _, neighbor in ipairs(neighbors) do
+                  local nx, ny = neighbor.x, neighbor.y
+                  local nKey = posKey(nx, ny)
+      
+                  if isWalkable(nx, ny) then
+                      local tentativeG = gScore[posKey(cx, cy)] + 1
+                      if not gScore[nKey] or tentativeG < gScore[nKey] then
+                          cameFrom[nKey] = {from = {x = nx, y = ny}, prev = posKey(cx, cy)}
+                          gScore[nKey] = tentativeG
+                          fScore[nKey] = tentativeG + heuristic({x = nx, y = ny}, {x = goalX, y = goalY})
+      
+                          local exists = false
+                          for _, node in ipairs(openSet) do
+                              if node.x == nx and node.y == ny then
+                                  exists = true
+                                  break
+                              end
+                          end
+                          if not exists then
+                              table.insert(openSet, {x = nx, y = ny, f = fScore[nKey]})
+                          end
+                      end
+                  end
+              end
+          end
+      
+          return nil
+      end
+      
+      -- Example: walking from current position to (goalX, goalY)
+      local startX = math.floor(getLocal().pos.x / 32)
+      local startY = math.floor(getLocal().pos.y / 32)
+      
+      local path = pathfindAStar(startX, startY, goalX, goalY)
+      if path then
+          for i, step in ipairs(path) do
+              findPath(step.x, step.y)
+              sleep(100)
+          end
+      else
+          doLog("No valid path found.")
+      end
     end
 
     return tab
