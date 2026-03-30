@@ -166,10 +166,10 @@ function player()
       if path then
           for i, step in ipairs(path) do
               FindPath(step.x, step.y)
-              sleep(delay)
+              Sleep(delay)
           end
       else
-          doLog("No valid path found.")
+          DoLog("No valid path found.")
       end
     end
 
