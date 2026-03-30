@@ -81,7 +81,7 @@ function player()
         SendPacket(2, "action|dialog_return\ndialog_name|trash_item\nitemID|" .. id .. "|\ncount|" .. amount .. "\n")
     end
 
-    function tab:pathfind(goalX,goalY)
+    function tab:pathfind(goalX,goalY,delay)
       local function heuristic(a, b)
           return math.abs(a.x - b.x) + math.abs(a.y - b.y)
       end
@@ -165,8 +165,8 @@ function player()
       local path = pathfindAStar(startX, startY, goalX, goalY)
       if path then
           for i, step in ipairs(path) do
-              findPath(step.x, step.y)
-              sleep(100)
+              FindPath(step.x, step.y)
+              sleep(delay)
           end
       else
           doLog("No valid path found.")
