@@ -88,7 +88,7 @@ function player()
       
       local function isWalkable(x, y)
           local tile = GetTile(x, y)
-          return tile%2 ~= 0 or not tile.collidable
+          return tile.fg%2 ~= 0 or not tile.collidable
       end
       
       local function posKey(x, y)
