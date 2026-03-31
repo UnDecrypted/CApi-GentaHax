@@ -88,7 +88,7 @@ function player()
       
       local function isWalkable(x, y)
           local tile = GetTile(x, y)
-          return tile and tile.fg == 0 and tile.bg == 0 and not tile.collidable
+          return tile%2 ~= 0 or not tile.collidable
       end
       
       local function posKey(x, y)
@@ -166,10 +166,10 @@ function player()
       if path then
           for i, step in ipairs(path) do
               FindPath(step.x, step.y)
-              Sleep(delay)
+              sleep(delay)
           end
       else
-          DoLog("No valid path found.")
+          LogToConsole("No valid path found.")
       end
     end
 
