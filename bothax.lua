@@ -128,20 +128,23 @@ end
 
 function players:get_by_name(name)
     for _, p in pairs(GetPlayerList()) do
-        if p.name:find(name) then return wrap_player(p) else return false end
+        if p.name:find(name) then return wrap_player(p) end
     end
+    return false
 end
 
 function players:get_by_userid(id)
     for _, p in pairs(GetPlayerList()) do
-        if p.userId == id then return wrap_player(p) else return false end
+        if p.userId == id then return wrap_player(p) end
     end
+    return false
 end
 
 function players:get_by_netid(id)
     for _, p in pairs(GetPlayerList()) do
-        if p.netId == id then return wrap_player(p) else return false end
+        if p.netId == id then return wrap_player(p) end
     end
+    return false
 end
 
 -- ============================================================
